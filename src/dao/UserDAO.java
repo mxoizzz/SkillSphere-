@@ -23,13 +23,14 @@ public class UserDAO {
                 ps.setString(6, user.getResumePath());
                 int rowsAffected = ps.executeUpdate();
                 return rowsAffected > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-        finally {
-            DBConnection.closeConnection();
-        }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+            finally {
+                System.out.println("User registered successfully.");
+            }
+      
     }
 
     public User getUserByEmail(String email) {
